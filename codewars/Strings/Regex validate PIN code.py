@@ -7,8 +7,8 @@ Examples (Input --> Output)
 "12345"  -->  false
 "a234"   -->  false
 """
+import bisect
+
 
 def validate_pin(pin):
     return len(pin) in (4, 6) and pin.isdigit()
-
-print(validate_pin('1235'))
