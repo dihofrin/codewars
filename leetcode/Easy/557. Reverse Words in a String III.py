@@ -30,5 +30,10 @@ class Solution:
                 result += ' '
         return result
 
+        #other solution:
+        # s = s.split()
+        # s = [i[::-1] for i in s]
+        # return ' '.join(s)
+
 """Runtime: 51 ms, faster than 61.70% of Python3 online submissions for Reverse Words in a String III.
 Memory Usage: 14.6 MB, less than 84.06% of Python3 online submissions for Reverse Words in a String III."""
