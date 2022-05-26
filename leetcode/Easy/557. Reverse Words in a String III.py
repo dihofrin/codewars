@@ -22,4 +22,13 @@ All the words in s are separated by a single space."""
 
 class Solution:
     def reverseWords(self, s: str) -> str:
-        pass
+        result = ''
+        s = s.split()
+        for i in range(len(s)):
+            result += s[i][::-1]
+            if i != len(s)-1:
+                result += ' '
+        return result
+
+"""Runtime: 51 ms, faster than 61.70% of Python3 online submissions for Reverse Words in a String III.
+Memory Usage: 14.6 MB, less than 84.06% of Python3 online submissions for Reverse Words in a String III."""
