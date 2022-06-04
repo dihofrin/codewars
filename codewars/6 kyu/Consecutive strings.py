@@ -24,16 +24,19 @@ consecutive strings : follow one after another without an interruption"""
 
 
 def longest_consec(strarr, k):
+    result = ''
     strrs = []
-    for i in range(len(strarr)):
-        tmp = ''
-        x = i
-        for j in range(k):
-            tmp += strarr[x]
-            x += 1
-            if x > len(strarr)-1:
-                break
-        strrs.append(tmp)
-    if len(strrs) == 0 or k == 0 or k > len(strarr):
+    if k >= 0 or len(strrs) > 0 or k > len(strarr):
+        for i in range(len(strarr)):
+            tmp = ''
+            x = i
+            for j in range(k):
+                tmp += strarr[x]
+                x += 1
+                if x > len(strarr)-1:
+                    break
+            strrs.append(tmp)
+        result = max(strrs, key=len, default='')
+    if k > len(strarr):
         return ''
-    return max(strrs, key=len)
+    return result
