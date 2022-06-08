@@ -7,4 +7,8 @@ Examples
 [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]"""
 
 def sort_array(source_array):
-    # Return a sorted array.
+    odds = sorted([i for i in source_array if i % 2], reverse=True)
+    for i in range(len(source_array)):
+        if source_array[i] % 2:
+            source_array[i] = odds.pop()
+    return source_array
